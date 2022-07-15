@@ -16,7 +16,7 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity: if we want to return odds or evens
     :return: list of integers
     """
-    if parity == 1:
+    if parity == parity.EVEN:
         even_list = [str(value) for value in range(start, stop) if value % 2 == 0]
         print(even_list)
     else:
