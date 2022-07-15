@@ -36,7 +36,12 @@ def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     :param strategy:
     :return:
     """
-    pass
+    ####one example is squaring, the other is factorial. all within given range
+
+    number = (strategy for x in range(start,stop))
+    print(number)
+
+    #pass
 
 
 def gen_set(val_in: str) -> Set:
@@ -48,4 +53,6 @@ def gen_set(val_in: str) -> Set:
     :param val_in:
     :return:
     """
+    ###need to iterate through string and do a .lower to get the values given to lowercase
+
     pass
