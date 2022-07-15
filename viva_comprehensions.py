@@ -9,16 +9,19 @@ class Parity(enum.Enum):
 
 def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    given a range, return a list of the odd or even integers in that range.
 
-    :param start:
-    :param stop:
-    :param parity:
-    :return:
+    :param start: first integer of range
+    :param stop: last integer of range
+    :param parity: if we want to return odds or evens
+    :return: list of integers
     """
-    pass
+    if parity == 1:
+        even_list = [str(value) for value in range(start, stop) if value % 2 == 0]
+        print(even_list)
+    else:
+        odd_list = [str(value) for value in range(start, stop) if value % 2 != 0]
+        print(odd_list)
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
