@@ -16,43 +16,44 @@ def gen_list(start: int, stop: int, parity: Parity) -> List[int]:
     :param parity: if we want to return odds or evens
     :return: list of integers
     """
-    if parity == parity.EVEN:
-        even_list = [str(value) for value in range(start, stop) if value % 2 == 0]
-        print(even_list)
-    else:
-        odd_list = [str(value) for value in range(start, stop) if value % 2 != 0]
-        print(odd_list)
+
+    # if parity == parity.EVEN:
+    #     even_list = [str(value) for value in range(start, stop) if value % 2 == 0]
+    #     print(even_list)
+    # else:
+    #     odd_list = [str(value) for value in range(start, stop) if value % 2 != 0]
+    #     print(odd_list)
+
+    return [num for num in range(start,stop) if (parity == parity.EVEN and num % 2 == 0)
+            or (parity == parity.ODD and num % 2 != 0)]
 
 
 def gen_dict(start: int, stop: int, strategy: Callable) -> Dict:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    return a new dict by iterating through the range(start/stop integer) and applying a math formula
 
 
-    :param start:
-    :param stop:
-    :param strategy:
+    :param start: starting integer
+    :param stop: stopping integer
+    :param strategy: math formulat (square, factorial)
     :return:
     """
     ####one example is squaring, the other is factorial. all within given range
 
-    number = (strategy for x in range(start,stop))
-    print(number)
+    return {num: strategy(num) for num in range(start,stop)}
 
     #pass
 
 
 def gen_set(val_in: str) -> Set:
     """
-    Oh no some evil developer decided not to write docstrings. Maybe you can use the test cases to decipher
-    what this method was supposed to do. Hey if you do, maybe you could do some good in this world by
-    updating this here docstring to something useful.
+    return letters as uppercase
 
-    :param val_in:
+    :param val_in: string
     :return:
     """
-    ###need to iterate through string and do a .lower to get the values given to lowercase
+    ###need to iterate through string and do a .upper to get the values given to lowercase
 
-    pass
+
+    return{string.upper() for string in val_in if string == string.lower()}
+    #pass
